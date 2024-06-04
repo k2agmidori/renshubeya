@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Eczar";
+  src: url("/fonts/Eczar-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* bold */
+@font-face {
+  font-family: "myfont";
+  src: url("/fonts/Eczar-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  margin: 1rem;
+}
+@media screen and (max-width: 700px) {
+  main {
+    margin: 0;
+  }
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+section h1 {
+  padding: 1rem;
+  font-size: 1rem;
+  background: #4ea9b8;
+  color: #fff;
+  font-family: "Eczar", serif;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+section p {
+  padding: 1rem;
+  font-family: "Eczar", serif;
+  font-weight: normal;
+}
+
+#photo {
+  width: 100%;
+  height: 500px;
+}
+
+#nextBtn {
+  display: block;
+  width: 300px;
+  background: #4ea9b8;
+  color: #fff;
+  border: solid transparent 1px;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+#nextBtn .material-symbols-outlined {
+  font-size: 1rem;
+  vertical-align: middle;
+  padding-left: 0.2rem;
+}
+
+@media screen and (min-width: 700px) {
+  #nextBtn:hover {
+    background: #fff;
+    color: #4ea9b8;
+    border: solid #4ea9b8 1px;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 50vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  #nextBtn:active {
+    background: #fff;
+    color: #4ea9b8;
+    border: solid #4ea9b8 1px;
+  }
+  img {
+    display: block;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+}/*# sourceMappingURL=style.css.map */

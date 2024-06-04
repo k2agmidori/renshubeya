@@ -1,0 +1,503 @@
+@charset "urf-8";
+@font-face {
+    font-family: "Eczar";
+    src: url("/fonts/Eczar-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/* bold */
+@font-face {
+    font-family: "myfont";
+    src: url("/fonts/Eczar-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    margin: 1rem;
+    @media screen and (max-width: 700px) {
+        margin: 0;
+    }
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    h1 {
+        padding: 1rem;
+        font-size: 1rem;
+        background: #4ea9b8;
+        color: #fff;
+        font-family: "Eczar", serif;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+    }
+
+    p {
+        padding: 1rem;
+        font-family: "Eczar", serif;
+        font-weight: normal;
+    }
+}
+
+#photo {
+    width: 100%;
+    height: 500px;
+}
+
+#nextBtn {
+    display: block;
+    width: 300px;
+    background: #4ea9b8;
+    color: #fff;
+    border: solid transparent 1px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 auto;
+    .material-symbols-outlined {
+        font-size: 1rem;
+        vertical-align: middle;
+        padding-left: 0.2rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #nextBtn:hover {
+        background: #fff;
+        color: #4ea9b8;
+        border: solid #4ea9b8 1px;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #nextBtn:active {
+        background: #fff;
+        color: #4ea9b8;
+        border: solid #4ea9b8 1px;
+    }
+    img {
+        display: block;
+        width: 100%;
+        // height: 50vh;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+// ここからGoogleMap
+#kanagawa,
+#tokyo {
+    height: 550px;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+.map_box {
+    // width: 200px;
+    // background: orange;
+    text-align: start;
+    p.kosha_name {
+        // font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana,
+        // Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        color: #009380;
+        font-weight: bold;
+    }
+    p.map_address {
+        @media screen and (max-width: 768px) {
+            font-size: 0.8rem;
+        }
+    }
+    a.map_link_btn {
+        // text-decoration: none;
+        font-weight: bold;
+        display: block;
+        &:link,
+        &:active,
+        &:hover,
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+a.map_link_btn {
+    position: relative;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 100%;
+    margin: auto;
+    padding: 0.3rem 0;
+    font-weight: bold;
+    border: 2px solid #009380;
+    color: #ffffff;
+    transition: 0.5s;
+    background: #009380;
+    border-radius: 50px;
+
+    &:before {
+        /*白い丸 */
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 19px;
+        width: 1rem;
+        height: 1rem;
+        margin-top: -8px;
+        border-radius: 50%;
+        background: #fff;
+    }
+    &:after {
+        /*「after要素」で三角 */
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 25px;
+        width: 0;
+        height: 0;
+        margin-top: -5px;
+        border: 5px solid transparent; /*top right bottom を透明化 */
+        border-left: 5px solid #009380;
+    }
+    &:hover:after {
+        /*「after要素」のマウスオーバー（カラーを合わせる） */
+        border-left: 5px solid #009380;
+    }
+}
+a.map_link_btn:hover {
+    color: #009380;
+    background: #ffffff;
+}
+
+.voice-container {
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    // PCのとき
+    @media (min-width: 960px) {
+        padding: 7rem 0rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .voice-box {
+        margin: 0 auto;
+        position: relative;
+        background-color: #ffffff;
+        border-radius: 10px;
+        margin-bottom: 50px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        list-style: none;
+        max-width: 600px;
+        @media (min-width: 960px) {
+            // width: calc(100% / 3 );
+            width: 30%;
+        }
+
+        .voice-box-inner {
+            position: relative;
+            height: 65vw;
+
+            @media (min-width: 960px) {
+                max-height: 300px;
+            }
+            .voice-box-img {
+                margin-top: 1rem;
+                img {
+                    border-radius: 50%;
+                    margin: 0 auto;
+                    height: 60vw;
+                    width: 60vw;
+                    @media (min-width: 960px) {
+                        height: 300px;
+                        width: 300px;
+                        padding: 15px;
+                    }
+                }
+            }
+            // 縦文字
+            .voice-box-heading p {
+                position: absolute;
+                top: -15px;
+                right: 3%;
+                padding: 15px 3px;
+                background-color: #ffffffb3;
+                writing-mode: vertical-rl;
+                font-family: "Shippori Mincho", serif;
+                font-weight: 500;
+                font-size: 1rem;
+                // tab
+                @media (min-width: 765px) {
+                    font-size: 1.8rem;
+                }
+                // PC
+                @media (min-width: 960px) {
+                    font-size: 1rem;
+                }
+                &:last-child {
+                    top: 10px;
+                    right: 15%;
+                    padding: 15px 3px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    writing-mode: vertical-rl;
+                    font-family: "Shippori Mincho", serif;
+                    font-weight: 500;
+                }
+            }
+            .voice-box-daigaku {
+                position: absolute;
+                z-index: 100;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                top: 60%;
+                left: 0;
+                padding: 3px 15px;
+                background-color: #009380;
+                letter-spacing: 1px;
+                flex-direction: column;
+
+                p:last-child {
+                    font-size: 0.7rem;
+                }
+                // tab
+                @media (min-width: 765px) {
+                    top: 71%;
+                    padding: 3px 15px;
+                    font-size: 1.5rem;
+                    p:last-child {
+                        font-size: 1.2rem;
+                    }
+                }
+                // pc
+                @media (min-width: 960px) {
+                    top: 72%;
+                    font-size: 1rem;
+                    p:last-child {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+            .voice-box-info {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                position: absolute;
+                width: auto;
+                top: 76%;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.7);
+                padding: 10px 15px 5px 15px;
+                p {
+                    font-family: "Shippori Mincho", serif;
+                    font-size: 3.7vw;
+                    font-weight: 700;
+                    line-height: 6vw;
+                }
+                // tab
+                @media (min-width: 765px) {
+                    top: 83%;
+                    p {
+                        // padding: 10px 30px 0 10px
+                        font-size: 1.3rem;
+                        line-height: 2.2rem;
+                    }
+                }
+                // PC
+                @media (min-width: 960px) {
+                    top: 84%;
+                    padding-top: 20px;
+                    p {
+                        // padding: 10px 30px 0 10px
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .voice-box-text {
+            padding: 7vw 5vw;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            position: relative;
+            margin-bottom: 20px;
+            padding: 0 20px 30px;
+            height: auto;
+            overflow: hidden;
+            @media (min-width: 960px) {
+                padding: 40px 25px 25px;
+            }
+        }
+
+        .box_more {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            padding-top: 70px;
+            text-align: center;
+            line-height: 2em;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 70%);
+            cursor: pointer;
+        }
+        .is-open .box_more {
+            background: transparent;
+        }
+        .box_more::before {
+            color: #555;
+            content: "続きを読む";
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+        }
+        .is-active .box_more::before {
+            content: "閉じる";
+        }
+    }
+}
+
+
+// ここからタブメニュー
+$color-white: #ffffff;
+$color-light: #f4f4f4;
+$color-blue-gray: #9194a1;
+$color-blue-dark: #252b46;
+$color-grn-light: #009380;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  font-family: Montserrat, "Noto Sans JP", sans-serif;
+}
+
+
+
+.map-tab-container {
+  max-width: 75rem;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+.paragraph {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: inherit;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  color: $color-blue-gray;
+}
+
+
+  .tab {
+    width: 100%;
+    height: auto;
+    padding: 3rem 0;
+
+    &-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-bottom: 1.3px solid darken($color-light, 10);
+      transition: all 0.3s ease;
+
+      &-link {
+        position: relative;
+        overflow: hidden;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: inherit;
+        cursor: pointer;
+        width: calc(100% / 4);
+        height: auto;
+        padding: 1rem 0;
+        border-bottom: 2.5px solid transparent;
+        color: $color-blue-gray;
+        background: $color-white;
+        transition: all 0.3s ease;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          z-index: 2;
+        }
+
+        &.is-active {
+          bottom: 0px;
+          z-index: 0;
+          overflow: hidden;
+          border-bottom: 2.5px solid $color-grn-light;
+          color: $color-blue-dark;
+          background: $color-white;
+        }
+      }
+    }
+
+    &-bar {
+      padding: 2.5rem 0;
+      overflow: hidden;
+      background: $color-white;
+
+      &-content {
+        display: none;
+        width: 100%;
+        min-height: 10rem;
+        transition: all 0.3s ease;
+
+        &.is-active {
+          display: block;
+        }
+      }
+    }
+  }
